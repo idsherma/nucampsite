@@ -62,3 +62,20 @@ header h2 {
     border-top: none;
     padding: 10px;
 }
+
+/* ------------------------------ */
+/* ------------------------------ */
+/*            CAROUSEL            */
+/* ------------------------------ */
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel {
+    border: solid #5637DD;
+}
+
+/* .modal-footer {
+    border-top: none;
+} */
