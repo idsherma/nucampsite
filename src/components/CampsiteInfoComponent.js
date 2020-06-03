@@ -22,24 +22,28 @@ class CampsiteInfo extends Component {
             return(
                 <div className="col-md-5 m-1">
                     <h4>Comments</h4>
-                    {comments.map(comment => (<p key={comment.id}><p>{comment.text}<br/></p>--{comment.author} {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>))}
+                    {comments.map(comment => (<p key={comment.id}>
+                    <p>{comment.text}<br/></p>--{comment.author}, 
+                    {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
+                    </p>))}
                 </div>
             );
         }
         return <div/>;
     }
 
-
     render() {
-        if (this.props.campsite !== null) {
-            return(
-                <div className="row">
-                    {this.renderCampsite(this.props.campsite)} 
-                    {this.renderComments(this.props.campsite.comments)}
+        if (this.props.campsite) {
+            return (
+                <div className="container">
+                    <div className="row">
+                        {this.renderCampsite(this.props.campsite)}
+                        {this.renderComments(this.props.campsite.comments)}
+                    </div>
                 </div>
             );
         }
-        return <div/>;
+        return <div />;
     }
 }
 
